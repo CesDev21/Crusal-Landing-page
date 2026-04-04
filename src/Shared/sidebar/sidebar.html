@@ -1,0 +1,88 @@
+@if (isVisible()) {
+  <div
+    class="fixed inset-0 z-40 flex box-shadow: -8px 0 24px -4px border-right: 5px solid rgba(178,178,178,0.25);"
+  >
+    <!-- Overlay blur, opaco y cierra al hacer click -->
+    <div
+      class="fixed inset-0 z-40 transition-opacity duration-200"
+      style="background: rgba(0, 0, 0, 0.486)"
+      (click)="close()"
+    ></div>
+    <!-- Sidebar flotante encima del overlay -->
+    <aside
+      class="fixed right-0 top-20 w-60 md:w-80 h-[calc(100vh-80px)] shadow-lg z-40 flex flex-col p-6 transition-transform duration-200 ease-in-out gap-8"
+      style="background-color: rgba(242, 241, 238, 0.973)"
+      [class.translate-x-0]="isOpen()"
+      [class.translate-x-full]="!isOpen()"
+    >
+      <!-- Enlaces solo texto, gran separación arriba -->
+      <nav class="flex flex-col gap-8 md:gap-11 mt-5 md:mt-20 mx-5 justify-center items-center select-none">
+        <a
+          href="/home"
+          class="relative inline-flex items-center justify-center select-none transition cursor-pointer text-md md:text-xl font-regular"
+          style="color: var(--negro-crusal); font-family: var(--font-Cormorant-light); background: transparent"
+          (click)="onNavigate('/home','factory',$event)"
+        >
+          Home
+          <span
+            class="absolute bottom-0 left-0 h-0.5 transition-all duration-600 ease-in-out"
+            [style.width]="activeSection === 'factory' ? '100%' : '0%'"
+            style="background-color: var(--black-corceli)"
+          ></span>
+        </a>
+        <a
+          href="/history"
+          class="relative inline-flex items-center justify-center select-none transition cursor-pointer text-md md:text-xl font-regular"
+          style="color: var(--negro-crusal); font-family: var(--font-Cormorant-light); background: transparent"
+          (click)="onNavigate('/history','history',$event)"
+        >
+          About Us
+          <span
+            class="absolute bottom-0 left-0 h-0.5 transition-all duration-600 ease-in-out"
+            [style.width]="activeSection === 'history' ? '100%' : '0%'"
+            style="background-color: var(--black-corceli)"
+          ></span>
+        </a>
+        <a
+          href="/services"
+          class="relative inline-flex text-center items-center justify-center select-none transition cursor-pointer text-md md:text-xl font-regular"
+          style="color: var(--negro-crusal); font-family: var(--font-Cormorant-light); background: transparent"
+          (click)="onNavigate('/services','services',$event)"
+        >
+          Features
+          <span
+            class="absolute bottom-0 left-0 h-0.5 transition-all duration-600 ease-in-out"
+            [style.width]="activeSection === 'services' ? '100%' : '0%'"
+            style="background-color: var(--black-corceli)"
+          ></span>
+        </a>
+        <a
+          href="/plan"
+          class="relative inline-flex items-center justify-center text-center select-none transition cursor-pointer text-md md:text-xl font-regular"
+          style="color: var(--negro-crusal); font-family: var(--font-Cormorant-light); background: transparent"
+          (click)="onNavigate('/plan','plan',$event)"
+        >
+          Plan
+          <span
+            class="absolute bottom-0 left-0 h-0.5 transition-all duration-600 ease-in-out"
+            [style.width]="activeSection === 'plan' ? '100%' : '0%'"
+            style="background-color: var(--black-corceli)"
+          ></span>
+        </a>
+        <a
+          href="/contact"
+          class="relative inline-flex items-center justify-center select-none transition cursor-pointer text-md md:text-xl font-regular"
+          style="color: var(--negro-crusal); font-family: var(--font-Cormorant-light); background: transparent"
+          (click)="onNavigate('/contact','contact',$event)"
+        >
+          Contact
+          <span
+            class="absolute bottom-0 left-0 h-0.5 transition-all duration-600 ease-in-out"
+            [style.width]="activeSection === 'contact' ? '100%' : '0%'"
+            style="background-color: var(--black-corceli)"
+          ></span>
+        </a>
+      </nav>
+    </aside>
+  </div>
+}

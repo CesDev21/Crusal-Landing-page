@@ -1,0 +1,110 @@
+<section
+  class="w-full h-20 flex items-center justify-center px-6 py-6 top-0 z-50"
+  style="background: transparent "
+>
+  <div class="flex flex-row gap-50 md:gap-100 lg:gap-30 xl:gap-40 2xl:gap-80 justify-between md:justify-center max-w-400">
+    <!-- Div 1: icono -->
+    <div class="flex items-center justify-start">
+      <a href="/home" aria-label="Go to home" (click)="goHome($event)">
+        <!-- Desktop / md+ logo -->
+        <img
+          src="/assets/images/Longlogo.webp"
+          alt="Logo"
+          width="200"
+          height="120"
+          class="hidden md:block h-14 cursor-pointer transition-transform duration-200 hover:scale-101"
+          style="filter: none; color: #0d0802; fill: #0d0802"
+        />
+        <!-- Mobile logo: visible below md -->
+        <img
+          src="/assets/images/Logo.webp"
+          alt="Logo"
+          width="80"
+          height="48"
+          class="block md:hidden h-13 w-13 cursor-pointer transition-transform duration-200 hover:scale-103"
+          style="filter: none; color: #0d0802; fill: #0d0802"
+        />
+      </a>
+    </div>
+    <!-- Div 2: botón contacto y botón sidevar agrupados -->
+    <div class="flex flex-row items-center justify-end md:gap-10">
+      <!-- Rutas y Contact us juntos -->
+      <div class="flex flex-row items-center gap-15">
+        <div class="hidden lg:flex items-center gap-5 lg:gap-7 xl:gap-10">
+          <a
+            href="/home"
+            class="text-(--negro-crusal) font-regular transition cursor-pointer px-2 py-1 lg:text-lg xl:text-xl"
+            style="font-family: var(--font-Monserrat)"
+            (mouseenter)="hovered = 'factory'"
+            (mouseleave)="hovered = ''"
+            (click)="activeSection = 'factory'"
+          >
+            Home
+          </a>
+          <a
+            href="/aboutus"
+            class="text-(--negro-crusal) font-regular transition cursor-pointer px-2 py-1 lg:text-lg xl:text-xl"
+            style="font-family: var(--font-Monserrat)"
+            (mouseenter)="hovered = 'history'"
+            (mouseleave)="hovered = ''"
+            (click)="activeSection = 'history'"
+          >
+            About us
+          </a>
+          <a
+            href="/features"
+            class="text-(--negro-crusal) font-regular transition cursor-pointer px-2 py-1 lg:text-lg xl:text-xl"
+            style="font-family: var(--font-Monserrat)"
+            (mouseenter)="hovered = 'services'"
+            (mouseleave)="hovered = ''"
+            (click)="activeSection = 'services'"
+          >
+            Features
+          </a>
+          <a
+            href="/plan"
+            class="text-(--negro-crusal) font-regular transition cursor-pointer px-2 py-1 lg:text-lg xl:text-xl"
+            style="font-family: var(--font-Monserrat)"
+            (mouseenter)="hovered = 'plan'"
+            (mouseleave)="hovered = ''"
+            (click)="activeSection = 'plan'"
+          >
+            Plan
+          </a>
+        </div>
+
+        <a
+          href="/contact"
+          class="px-6 py-2 hidden lg:flex items-center justify-center rounded-lg lg:text-lg xl:text-xl font-regular cursor-pointer duration-200 bg-(--naranja-crusal) text-(--blanco-crusal) hover:bg-(--negro-crusal) hover:text-(--blanco-crusal) transition-colors"
+          style="font-family: var(--font-Monserrat)"
+          aria-label="Contact us"
+        >
+          Contact us
+        </a>
+      </div>
+      <div class="flex lg:hidden items-center">
+        <button
+          class="inline-flex cursor-pointer items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-200 transition"
+          aria-label="Abrir menú"
+          style="background-color: var(--naranja-crusal)"
+          (click)="sidevar.toggle()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="var(--blanco-crusal)"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
