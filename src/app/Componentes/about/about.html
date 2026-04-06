@@ -1,0 +1,180 @@
+<section class="w-full top-0 h-full">
+  <!-- 1er div main  -->
+  <div
+    class="relative w-full overflow-hidden bg-(--azul-crusal)"
+    style="margin-top: -84px; padding-top: 84px"
+  >
+    <div
+      class="container mx-auto max-w-400 flex flex-col md:flex-row justify-center items-center py-15 md:py-20 lg:py-20 xl:py-20 2xl:py-20 gap-10 md:gap-3 xl:gap-30"
+    >
+      <!-- Segunda columna (ahora primera): texto (imagen de referencia) -->
+      <div class="mx-10 flex flex-col gap-6 md:w-1/3 max-w-400">
+        <!-- H2 + description -->
+        <div
+          class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-(--blanco-crusal)"
+        >
+          Keep on track. Reach your fitness goal.​
+        </div>
+
+        <!-- Subtitulo -->
+        <div class="text-base md:text-xl font-light text-(--blanco-crusal)">
+          Cursus amet, mattis placerat convallis libero faucibus quis est porta vivamus erat
+          tristique sed.
+        </div>
+
+        <!-- Botón Learn more -->
+        <div class="mt-4">
+          <a
+            href="/learn"
+            aria-label="Learn more"
+            class="px-6 py-2 rounded-lg font-semibold inline-block transition-colors duration-200 bg-(--blanco-azulado-crusal) text-(--azul-crusal) hover:bg-(--naranja-crusal) hover:text-(--blanco-crusal)"
+            >Learn more ></a
+          >
+        </div>
+      </div>
+
+      <!-- Segunda columna (ahora segunda): imagen -->
+      <div class="inline-flex items-center justify-center">
+        <img
+          src="/assets/images/hero.webp"
+          alt="Secondary hero image"
+          class="w-80 md:w-96 lg:w-110 rounded-md object-cover"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- 2do div main -->
+  <div class="w-full overflow-hidden bg-(--blanco-azulado-crusal) py-25 text-(--negro-crusal)">
+    <div
+      class="container mx-auto max-w-400 flex flex-col md:flex-row justify-center items-center gap-10 md:gap-3 xl:gap-30"
+    >
+      <!-- Primera columna: imagen (como en el primer main) -->
+      <div class="inline-flex items-center justify-center">
+        <img
+          src="/assets/images/hero.webp"
+          alt="Secondary hero image"
+          class="w-80 md:w-96 lg:w-110 rounded-md object-cover"
+        />
+      </div>
+
+      <!-- Segunda columna: estructura tipo UAG (small heading, h2 + desc, icon list) -->
+      <div class="mx-10 text-(--negro-crusal) flex flex-col gap-6 md:w-1/3 max-w-400">
+        <!-- Small heading -->
+        <div class="text-sm uppercase tracking-widest text-(--naranja-crusal)">
+          PROGRESS TRACKER
+        </div>
+
+        <!-- H2 + description -->
+        <div>
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-(--negro-crusal)">
+            Track your progress with our app.
+          </h2>
+          <p class="text-base md:text-xl font-regular text-(--negro-crusal) text-justify mt-7">
+            Diam vestibulum tristique non purus velit dictum vel aliquam id egestas odio tortor
+            volutpat nulla varius aliquam vulputate commodo mus volutpat pretium, quam hendrerit
+            enim aliquam nisl imperdiet vivamus a, consectetur venenatis vivamus quam in vulputate
+            lacus, lacus nec bibendum.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3er div main -->
+  <div class="w-full overflow-hidden bg-(--blanco-azulado-crusal) py-25 text-(--negro-crusal)">
+    <div
+      class="container mx-auto max-w-400 flex flex-col md:flex-row justify-center items-center gap-10 md:gap-3 xl:gap-30"
+    >
+      <!-- Segunda columna (ahora primera): texto (imagen de referencia) -->
+      <div class="mx-10 flex flex-col gap-6 md:w-1/3 max-w-400">
+        <!-- Small heading (orange) -->
+        <div class="text-sm uppercase tracking-widest text-(--naranja-crusal)">
+          SMART NOTIFICATION
+        </div>
+
+        <!-- H2 + description -->
+        <div>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-(--negro-crusal)">
+            Never miss your fitness routine.
+          </h2>
+          <p class="text-base md:text-xl font-regular text-(--negro-crusal) text-justify mt-7">
+            Proin massa odio amet tellus dignissim condimentum in viverra eget rhoncus, adipiscing
+            eget ut donec vel enim, ultrices vestibulum nisl vel blandit dui enim hac sed a at
+            laoreet eget sagittis dictum.
+          </p>
+        </div>
+      </div>
+
+      <!-- Segunda columna (ahora segunda): imagen -->
+      <div class="inline-flex items-center justify-center">
+        <img
+          src="/assets/images/hero.webp"
+          alt="Secondary hero image"
+          class="w-80 md:w-96 lg:w-110 rounded-md object-cover"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- 4to div main: Placeholder de video YouTube -->
+  <div
+    id="yt-video-placeholder"
+    class="relative w-full flex items-center justify-center"
+    style="
+      background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('/assets/images/fd.webp') center center / cover no-repeat;
+      min-height: 400px;
+      height: 30vw;
+    "
+  >
+    <div
+      id="yt-placeholder-content"
+      class="w-full cursor-pointer flex flex-col items-center justify-center"
+      onclick="
+        (function () {
+          var ph = document.getElementById('yt-placeholder-content');
+          var cont = document.getElementById('yt-video-placeholder');
+          if (ph && cont) {
+            cont.innerHTML = `<iframe id='home-video' class='w-full h-[56vw] aspect-video block' src='https://www.youtube.com/embed/JUZtZjZ_BwI?rel=0&modestbranding=1&loop=1&enablejsapi=1&autoplay=1&controls=0&mute=1&playsinline=1&playlist=JUZtZjZ_BwI' allow='autoplay; encrypted-media' allowfullscreen aria-label='Historia Video2' style='border:0; background-size:cover; background-position:bottom; display:block;'></iframe>`;
+          }
+        })()
+      "
+    >
+      <div class="wp-block-uagb-container uagb-block-4188ec15 alignfull uagb-is-root-container">
+        <div class="uagb-container-inner-blocks-wrap">
+          <div
+            class="wp-block-uagb-info-box uagb-block-1a0efd0a uagb-infobox__content-wrap uagb-infobox-icon-above-title uagb-infobox-image-valign-top"
+          >
+            <div class="uagb-ifb-content flex flex-col items-center justify-center">
+              <div class="uagb-ifb-icon-wrap mb-4">
+                <div
+                  class="uagb-iconbox-icon-wrap uagb-infobox-shape-circle bg-(--azul-crusal) p-6 rounded-full flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    class="w-14 h-14"
+                    fill="#fff"
+                  >
+                    <path
+                      d="M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM176 168V344C176 352.7 180.7 360.7 188.3 364.9C195.8 369.2 205.1 369 212.5 364.5L356.5 276.5C363.6 272.1 368 264.4 368 256C368 247.6 363.6 239.9 356.5 235.5L212.5 147.5C205.1 142.1 195.8 142.8 188.3 147.1C180.7 151.3 176 159.3 176 168V168z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="uagb-ifb-title-wrap">
+                <h2 class="uagb-ifb-title text-4xl font-bold text-(--blanco-crusal)">People First​</h2>
+              </div>
+              <p class="uagb-ifb-desc text-center text-xl text-(--blanco-crusal) mt-5">
+                Eget amet viverra in sem dui vel netus sit condimentum amet nisl sit interdum
+                porttitor id.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
