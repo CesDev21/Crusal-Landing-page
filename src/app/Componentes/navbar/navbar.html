@@ -1,110 +1,235 @@
 <section
-  class="w-full h-20 flex items-center justify-center px-6 py-6 top-0 z-50"
-  style="background: transparent "
+  class="w-full h-21 relative flex items-center justify-between px-6 py-6 z-50"
+  style="background: transparent;"
 >
-  <div class="flex flex-row gap-50 md:gap-100 lg:gap-30 xl:gap-40 2xl:gap-80 justify-between md:justify-center max-w-400">
-    <!-- Div 1: icono -->
-    <div class="flex items-center justify-start">
-      <a href="/home" aria-label="Go to home" (click)="goHome($event)">
-        <!-- Desktop / md+ logo -->
-        <img
-          src="/assets/images/Longlogo.webp"
-          alt="Logo"
-          width="200"
-          height="120"
-          class="hidden md:block h-14 cursor-pointer transition-transform duration-200 hover:scale-101"
-          style="filter: none; color: #0d0802; fill: #0d0802"
-        />
-        <!-- Mobile logo: visible below md -->
-        <img
-          src="/assets/images/Logo.webp"
-          alt="Logo"
-          width="80"
-          height="48"
-          class="block md:hidden h-13 w-13 cursor-pointer transition-transform duration-200 hover:scale-103"
-          style="filter: none; color: #0d0802; fill: #0d0802"
-        />
+  <!-- Div 1: icono -->
+  <div class="flex items-end justify-start">
+    <a href="/home" aria-label="Go to home" (click)="goHome($event)">
+      <img
+        src="/assets/images/Longlogo.webp"
+        alt="Logo"
+        class="h-9 sm:h-14 cursor-pointer transition-transform duration-200 hover:scale-101"
+        style="filter: grayscale(1) brightness(0) invert(1);"
+      />
+    </a>
+  </div>
+  <!-- Div 2: navegación -->
+  <!-- Full nav: visible at xl and above -->
+  <div class="hidden xl:flex font-light items-center justify-end lg:gap-8 2xl:gap-15">
+    <a
+      href="/home"
+      class="relative text-base font-semibold transition cursor-pointer underline underline-offset-4 decoration-transparent lg:text-lg xl:text-xl"
+      style="font-family: var(--font-Monserrat)"
+      [style.color]="
+        activeSection === 'factory' || hovered === 'factory'
+          ? 'var(--blanco-crusal)'
+          : 'var(--blanco-crusal)'
+      "
+      (mouseenter)="hovered = 'factory'"
+      (mouseleave)="hovered = ''"
+      (click)="activeSection = 'factory'"
+    >
+      Home
+      <span
+        class="absolute left-0 bottom-0 h-0.5 transition-all duration-300 ease-in-out"
+        [style.width]="activeSection === 'factory' || hovered === 'factory' ? '100%' : '0%'"
+        style="background-color: var(--blanco-crusal)"
+      ></span>
+    </a>
+    <a
+      href="/about"
+      class="relative text-base font-semibold transition cursor-pointer underline underline-offset-4 decoration-transparent lg:text-lg xl:text-xl"
+      style="font-family: var(--font-Monserrat); color: var(--blanco-crusal)"
+      (mouseenter)="hovered = 'history'"
+      (mouseleave)="hovered = ''"
+      (click)="activeSection = 'history'"
+    >
+      About us
+      <span
+        class="absolute left-0 bottom-0 h-0.5 transition-all duration-300 ease-in-out"
+        [style.width]="activeSection === 'history' || hovered === 'history' ? '100%' : '0%'"
+        style="background-color: var(--blanco-crusal)"
+      ></span>
+    </a>
+    <a
+      href="/features"
+      class="relative text-base font-semibold transition cursor-pointer underline underline-offset-4 decoration-transparent lg:text-lg xl:text-xl"
+      style="font-family: var(--font-Monserrat); color: var(--blanco-crusal)"
+      (mouseenter)="hovered = 'services'"
+      (mouseleave)="hovered = ''"
+      (click)="activeSection = 'services'"
+    >
+      Features
+      <span
+        class="absolute left-0 bottom-0 h-0.5 transition-all duration-300 ease-in-out"
+        [style.width]="activeSection === 'services' || hovered === 'services' ? '100%' : '0%'"
+        style="background-color: var(--blanco-crusal)"
+      ></span>
+    </a>
+    <a
+      href="/plan"
+      class="relative text-base font-semibold transition cursor-pointer underline underline-offset-4 decoration-transparent lg:text-lg xl:text-xl"
+      style="font-family: var(--font-Monserrat); color: var(--blanco-crusal)"
+      (mouseenter)="hovered = 'plan'"
+      (mouseleave)="hovered = ''"
+      (click)="activeSection = 'plan'"
+    >
+      Plan
+      <span
+        class="absolute left-0 bottom-0 h-0.5 transition-all duration-300 ease-in-out"
+        [style.width]="activeSection === 'plan' || hovered === 'plan' ? '100%' : '0%'"
+        style="background-color: var(--blanco-crusal)"
+      ></span>
+    </a>
+  </div>
+
+  <!-- Compact nav for lg (>=lg and <xl): show 'The factory' + 'Others' -->
+  <div class="hidden lg:flex xl:hidden font-light items-center gap-10">
+    <a
+      href="/home"
+      class="relative text-base font-semibold transition cursor-pointer underline underline-offset-4 decoration-transparent lg:text-lg"
+      style="font-family: var(--font-Monserrat); color: var(--blanco-crusal)"
+      (mouseenter)="hovered = 'factory'"
+      (mouseleave)="hovered = ''"
+      (click)="activeSection = 'factory'"
+    >
+      The factory
+      <span
+        class="absolute left-0 bottom-0 h-0.5 transition-all duration-300 ease-in-out"
+        [style.width]="activeSection === 'factory' || hovered === 'factory' ? '100%' : '0%'"
+        style="background-color: var(--blanco-crusal)"
+      ></span>
+    </a>
+
+    <a
+      href="/history"
+      class="relative text-base font-semibold transition cursor-pointer underline underline-offset-4 decoration-transparent lg:text-lg"
+      style="font-family: var(--font-Monserrat); color: var(--blanco-crusal)"
+      (mouseenter)="hovered = 'history'"
+      (mouseleave)="hovered = ''"
+      (click)="activeSection = 'history'"
+    >
+      History
+      <span
+        class="absolute left-0 bottom-0 h-0.5 transition-all duration-300 ease-in-out"
+        [style.width]="activeSection === 'history' || hovered === 'history' ? '100%' : '0%'"
+        style="background-color: var(--blanco-crusal)"
+      ></span>
+    </a>
+
+    <div class="relative inline-block">
+      <button
+        (click)="toggleOthersModal()"
+        class="relative inline-flex items-center gap-2 text-base font-semibold lg:text-lg"
+        aria-haspopup="dialog"
+        [attr.aria-expanded]="showOthersModal"
+        style="font-family: var(--font-Monserrat); color: var(--blanco-crusal)"
+        (mouseenter)="hovered = 'others'"
+        (mouseleave)="hovered = ''"
+      >
+        Others
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 transition-transform duration-200"
+          [style.transform]="showOthersModal ? 'rotate(180deg)' : 'rotate(0deg)'"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.27a.75.75 0 01-.02-1.06z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        <span
+          class="absolute left-0 -bottom-1 h-0.5 transition-all duration-300 ease-in-out"
+          [style.width]="
+            activeSection === 'services' || activeSection === 'plan' || hovered === 'others'
+              ? '100%'
+              : '0%'
+          "
+          style="background-color: var(--blanco-crusal)"
+        ></span>
+      </button>
+      @if (showOthersModal) {
+        <div class="absolute left-0 mt-9 w-56 z-50">
+          <!-- Colita (cloud tail, moved left) -->
+          <div
+            style="
+              position: absolute;
+              top: -12px;
+              left: 18px;
+              width: 0;
+              height: 0;
+              border-left: 18px solid transparent;
+              border-right: 18px solid transparent;
+              border-bottom: 18px solid var(--blanco-crusal);
+            "
+          ></div>
+          <div
+            class="rounded-xl border border-gray-200 bg-(--blanco-crusal)"
+            style="padding: 0.5rem 0"
+          >
+            <ul class="flex flex-col gap-2 p-2">
+              <li>
+                <button
+                  class="text-left w-full px-3 py-2 lg:text-lg xl:text-xl hover:bg-gray-100 rounded-xl font-semibold"
+                  style="font-family: var(--font-Monserrat); color: var(--negro-crusal)"
+                  (click)="navigateTo('/services')"
+                >
+                  Comprehensive services
+                </button>
+              </li>
+              <li>
+                <button
+                  class="text-left w-full px-3 py-2 lg:text-lg xl:text-xl hover:bg-gray-100 rounded-xl font-semibold"
+                  style="font-family: var(--font-Monserrat); color: var(--negro-crusal)"
+                  (click)="navigateTo('/plan')"
+                >
+                  Sustainability plan
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Div 3 y 4: botón contacto y botón sidevar agrupados -->
+  <div class="flex items-end gap-2 md:gap-4">
+    <div class="hidden lg:flex items-center justify-end px-2">
+      <a
+        href="/contact"
+        class=" text-white rounded-md font-semibold px-6 py-2 flex items-center justify-center text-base transition-transform cursor-pointer duration-200 hover:scale-105"
+        style="font-family: var(--font-Monserrat); background-color: var(--naranja-crusal)"
+        aria-label="Contact us"
+      >
+        Contact us
       </a>
     </div>
-    <!-- Div 2: botón contacto y botón sidevar agrupados -->
-    <div class="flex flex-row items-center justify-end md:gap-10">
-      <!-- Rutas y Contact us juntos -->
-      <div class="flex flex-row items-center gap-15">
-        <div class="hidden lg:flex items-center gap-5 lg:gap-7 xl:gap-10">
-          <a
-            href="/home"
-            class="text-(--negro-crusal) font-regular transition cursor-pointer px-2 py-1 lg:text-lg xl:text-xl"
-            style="font-family: var(--font-Monserrat)"
-            (mouseenter)="hovered = 'factory'"
-            (mouseleave)="hovered = ''"
-            (click)="activeSection = 'factory'"
-          >
-            Home
-          </a>
-          <a
-            href="/aboutus"
-            class="text-(--negro-crusal) font-regular transition cursor-pointer px-2 py-1 lg:text-lg xl:text-xl"
-            style="font-family: var(--font-Monserrat)"
-            (mouseenter)="hovered = 'history'"
-            (mouseleave)="hovered = ''"
-            (click)="activeSection = 'history'"
-          >
-            About us
-          </a>
-          <a
-            href="/features"
-            class="text-(--negro-crusal) font-regular transition cursor-pointer px-2 py-1 lg:text-lg xl:text-xl"
-            style="font-family: var(--font-Monserrat)"
-            (mouseenter)="hovered = 'services'"
-            (mouseleave)="hovered = ''"
-            (click)="activeSection = 'services'"
-          >
-            Features
-          </a>
-          <a
-            href="/plan"
-            class="text-(--negro-crusal) font-regular transition cursor-pointer px-2 py-1 lg:text-lg xl:text-xl"
-            style="font-family: var(--font-Monserrat)"
-            (mouseenter)="hovered = 'plan'"
-            (mouseleave)="hovered = ''"
-            (click)="activeSection = 'plan'"
-          >
-            Plan
-          </a>
-        </div>
-
-        <a
-          href="/contact"
-          class="px-6 py-2 hidden lg:flex items-center justify-center rounded-lg lg:text-lg xl:text-xl font-regular cursor-pointer duration-200 bg-(--naranja-crusal) text-(--blanco-crusal) hover:bg-(--negro-crusal) hover:text-(--blanco-crusal) transition-colors"
-          style="font-family: var(--font-Monserrat)"
-          aria-label="Contact us"
+    <div class="flex lg:hidden items-center">
+      <button
+        class="inline-flex cursor-pointer items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-200 transition"
+        aria-label="Abrir menú"
+        style="background-color: var(--naranja-crusal)"
+        (click)="sidevar.toggle()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-10 w-10"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="var(--blanco-crusal)"
         >
-          Contact us
-        </a>
-      </div>
-      <div class="flex lg:hidden items-center">
-        <button
-          class="inline-flex cursor-pointer items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-200 transition"
-          aria-label="Abrir menú"
-          style="background-color: var(--naranja-crusal)"
-          (click)="sidevar.toggle()"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-10 w-10"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="var(--blanco-crusal)"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-      </div>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
     </div>
   </div>
 </section>
