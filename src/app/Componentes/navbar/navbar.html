@@ -1,21 +1,23 @@
 <section
-  class="w-full h-21 relative flex items-center justify-between px-6 py-6 z-50"
+  class="w-full h-21 relative z-50"
   style="background: transparent;"
 >
+  <div class="max-w-300 mx-auto flex items-center justify-between px-6 py-6 w-full">
   <!-- Div 1: icono -->
-  <div class="flex items-end justify-start">
-    <a href="/home" aria-label="Go to home" (click)="goHome($event)">
-      <img
-        src="/assets/images/Longlogo.webp"
-        alt="Logo"
-        class="h-9 sm:h-14 cursor-pointer transition-transform duration-200 hover:scale-101"
-        style="filter: grayscale(1) brightness(0) invert(1);"
-      />
-    </a>
-  </div>
-  <!-- Div 2: navegación -->
-  <!-- Full nav: visible at xl and above -->
-  <div class="hidden xl:flex font-light items-center justify-end lg:gap-8 2xl:gap-15">
+    <div class="flex items-end justify-start">
+      <a href="/home" aria-label="Go to home" (click)="goHome($event)">
+        <img
+          src="/assets/images/Longlogo.webp"
+          alt="Logo"
+          class="h-9 sm:h-14 cursor-pointer transition-transform duration-200 hover:scale-101"
+          style="filter: grayscale(1) brightness(0) invert(1);"
+        />
+      </a>
+    </div>
+  <!-- Div 2 y 3: navegación y botón contacto -->
+    <div class="flex items-center gap-10">
+      <!-- Full nav: visible at xl and above -->
+      <div class="hidden xl:flex font-light items-center justify-end lg:gap-8 2xl:gap-15">
     <a
       href="/home"
       class="relative text-base font-semibold transition cursor-pointer underline underline-offset-4 decoration-transparent lg:text-lg xl:text-xl"
@@ -81,10 +83,9 @@
         style="background-color: var(--blanco-crusal)"
       ></span>
     </a>
-  </div>
-
-  <!-- Compact nav for lg (>=lg and <xl): show 'The factory' + 'Others' -->
-  <div class="hidden lg:flex xl:hidden font-light items-center gap-10">
+      </div>
+      <!-- Compact nav for lg (>=lg and <xl): show 'The factory' + 'Others' -->
+      <div class="hidden lg:flex xl:hidden font-light items-center gap-10">
     <a
       href="/home"
       class="relative text-base font-semibold transition cursor-pointer underline underline-offset-4 decoration-transparent lg:text-lg"
@@ -194,42 +195,42 @@
         </div>
       }
     </div>
-  </div>
-
-  <!-- Div 3 y 4: botón contacto y botón sidevar agrupados -->
-  <div class="flex items-end gap-2 md:gap-4">
-    <div class="hidden lg:flex items-center justify-end px-2">
-      <a
-        href="/contact"
-        class=" text-white rounded-md font-semibold px-6 py-2 flex items-center justify-center text-base transition-transform cursor-pointer duration-200 hover:scale-105"
-        style="font-family: var(--font-Monserrat); background-color: var(--naranja-crusal)"
-        aria-label="Contact us"
-      >
-        Contact us
-      </a>
-    </div>
-    <div class="flex lg:hidden items-center">
-      <button
-        class="inline-flex cursor-pointer items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-200 transition"
-        aria-label="Abrir menú"
-        style="background-color: var(--naranja-crusal)"
-        (click)="sidevar.toggle()"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-10 w-10"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="var(--blanco-crusal)"
+      </div>
+      <!-- Botón contacto (solo visible en lg y arriba) -->
+      <div class="hidden lg:flex items-center justify-end px-2">
+        <a
+          href="/contact"
+          class="text-white rounded-md font-semibold px-6 py-2 flex items-center justify-center text-base transition-transform cursor-pointer duration-200 hover:scale-105"
+          style="font-family: var(--font-Monserrat); background-color: var(--naranja-crusal)"
+          aria-label="Contact us"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-      </button>
+          Contact us
+        </a>
+      </div>
+      <!-- Botón sidevar (solo visible en mobile) -->
+      <div class="flex lg:hidden items-center">
+        <button
+          class="inline-flex cursor-pointer items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-200 transition"
+          aria-label="Abrir menú"
+          style="background-color: var(--naranja-crusal)"
+          (click)="sidevar.toggle()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="var(--blanco-crusal)"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </section>
